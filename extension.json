@@ -1,0 +1,49 @@
+{
+  "name": "HiMCBBSWikiUtils",
+	"author": [
+		"Litwak913",
+		"HiTech0926"
+	],
+  "url": "https://github.com/HiWorldMC/HiMCBBSWikiUtils",
+  "description": "HiMCBBSWiki Utils，修改自MCBBSWikiUtils，遵循GPL2.0协议修改",
+  "version": "1.1",
+  "requires": {
+    "MediaWiki": ">= 1.31.0"
+  },
+  "license-name": "GPL-2.0-or-later",
+  "type": "other",
+  "manifest_version": 2,
+  "AutoloadNamespaces": {
+    "MediaWiki\\Extension\\HiMCBBSWiki\\": "includes/"
+  },
+  "HookHandlers": {
+    "main": {
+      "class": "MediaWiki\\Extension\\HiMCBBSWiki\\Hooks"
+    }
+  },
+  "Hooks": {
+    "SkinAddFooterLinks": "main",
+    "ParserFirstCallInit": "main"
+  },
+  "MessagesDirs": {
+    "HiMCBBSWikiUtils": ["i18n"]
+  },
+  "ResourceModules": {
+    "ext.himcbbswikiutils.avatar": {
+      "styles": "avatar.css",
+      "targets": ["desktop", "mobile"]
+    }
+  },
+  "ResourceFileModulePaths": {
+    "localBasePath": "resources",
+    "remoteExtPath": "HiMCBBSWikiUtils/resources"
+  },
+  "ConfigRegistry": {
+    "HiMCBBSWikiUtils": "GlobalVarConfig::newInstance"
+  },
+  "config": {
+    "XenforoURL": {
+      "value": ""
+    }
+  }
+}
